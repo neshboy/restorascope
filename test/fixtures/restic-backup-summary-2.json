@@ -1,0 +1,3 @@
+{"message_type":"status","percent_done":0.0,"total_files":900,"total_bytes":7100000}
+{"message_type":"status","percent_done":1.0,"files_done":900,"total_files":900,"bytes_done":7100000,"total_bytes":7100000}
+{"message_type":"summary","files_new":40,"files_changed":15,"files_unmodified":845,"dirs_new":1,"dirs_changed":2,"dirs_unmodified":42,"data_blobs":30,"tree_blobs":5,"data_added":6011234,"data_added_packed":4210987,"total_files_processed":900,"total_bytes_processed":7100000,"total_duration":8.1122,"snapshot_id":"b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9a1"}

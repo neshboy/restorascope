@@ -1,0 +1,16 @@
+node_modules/
+dist/
+*.log
+npm-debug.log*
+
+# Restorascope local data store (per-user, contains ingested backup/verification history)
+.restorascope/
+
+# Editor/OS
+.DS_Store
+Thumbs.db
+.vscode/
+*.tmp
+
+# Generated reports (users can opt to commit their own, but default is to ignore)
+report.html

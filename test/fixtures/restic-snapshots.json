@@ -1,0 +1,24 @@
+[
+  {
+    "time": "2026-06-01T02:00:14.128374512-07:00",
+    "parent": "9f8e7d6c5b4a39281706f5e4d3c2b1a09f8e7d6c5b4a39281706f5e4d3c2b1a",
+    "tree": "0a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f",
+    "paths": ["/home/nesh/projects"],
+    "hostname": "homelab-01",
+    "username": "nesh",
+    "id": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9",
+    "short_id": "a1b2c3d4",
+    "tags": ["nightly"]
+  },
+  {
+    "time": "2026-06-08T02:00:09.994120018-07:00",
+    "parent": "a1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9",
+    "tree": "1b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f90",
+    "paths": ["/home/nesh/projects"],
+    "hostname": "homelab-01",
+    "username": "nesh",
+    "id": "b2c3d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9a1",
+    "short_id": "b2c3d4e5",
+    "tags": ["nightly"]
+  }
+]

@@ -1,0 +1,38 @@
+{
+  "archives": [
+    {
+      "name": "homelab-01-2026-06-08T02:00:00",
+      "id": "d4e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9a1b2c3",
+      "start": "2026-06-08T02:00:00.000000",
+      "end": "2026-06-08T02:05:10.000000",
+      "duration": 310.2,
+      "stats": {
+        "original_size": 9455123456,
+        "compressed_size": 5320112233,
+        "deduplicated_size": 610223344,
+        "nfiles": 48900
+      },
+      "limits": {
+        "max_archive_size": 0.1
+      },
+      "command_line": ["borg", "create", "--stats", "--json", "/mnt/backup/borg-repo::homelab-01-2026-06-08T02:00:00", "/home/nesh"]
+    }
+  ],
+  "cache": {
+    "path": "/home/nesh/.cache/borg/e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9a1b2c3d4",
+    "stats": {
+      "total_chunks": 122501,
+      "total_size": 9455123456,
+      "total_unique_chunks": 54900,
+      "unique_size": 610223344
+    }
+  },
+  "encryption": {
+    "mode": "repokey-blake2"
+  },
+  "repository": {
+    "id": "e5f60718293a4b5c6d7e8f90a1b2c3d4e5f60718293a4b5c6d7e8f9a1b2c3d4",
+    "last_modified": "2026-06-08T02:05:00.000000",
+    "location": "/mnt/backup/borg-repo"
+  }
+}
