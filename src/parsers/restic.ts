@@ -90,10 +90,12 @@ function parseBackupJsonLines(lines: string[], repo: string): BackupRecord[] {
   );
 
   if (summary) {
-    const fullId = summary.snapshot_id ?? `unknown-${Date.now()}`;
+    const id = summary.snapshot_id
+      ? toShortId(summary.snapshot_id)
+      : `no-snapshot-id-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
     return [
       {
-        id: toShortId(fullId),
+        id,
         tool: "restic",
         repo,
         time: new Date().toISOString(),

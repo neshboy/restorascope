@@ -52,9 +52,19 @@ function backupKey(b: Pick<BackupRecord, "tool" | "repo" | "id">): string {
 function mergeBackupRecord(existing: BackupRecord, incoming: BackupRecord): BackupRecord {
   const merged: BackupRecord = { ...existing };
   for (const [key, value] of Object.entries(incoming) as [keyof BackupRecord, unknown][]) {
-    if (value !== undefined) {
-      (merged as any)[key] = value;
+    if (value === undefined) continue;
+    if (
+      key === "time" &&
+      incoming.sourceKind === "restic-backup-summary" &&
+      existing.sourceKind !== "restic-backup-summary"
+    ) {
+      // `restic backup --json` has no real wall-clock timestamp, so its parser
+      // stamps ingest-time as a stand-in (see src/parsers/restic.ts). Don't let
+      // that synthetic time clobber a real timestamp already merged in from
+      // `restic snapshots --json` (or Borg), regardless of ingest order.
+      continue;
     }
+    (merged as any)[key] = value;
   }
   return merged;
 }
