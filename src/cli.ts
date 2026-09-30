@@ -87,6 +87,11 @@ program
   .action((opts: { staleDays: string; dataDir: string }) => {
     const store = loadStore(opts.dataDir);
     const staleWindowDays = Number(opts.staleDays);
+    if (Number.isNaN(staleWindowDays)) {
+      console.error(`Invalid --stale-days value "${opts.staleDays}": expected a number.`);
+      process.exitCode = 1;
+      return;
+    }
     const stats = successStats(store.backups);
     const groups = verificationStatusByGroup(store.backups, store.verifications, staleWindowDays);
 
@@ -164,7 +169,13 @@ program
   .option("--data-dir <dir>", "local data directory", DEFAULT_DATA_DIR)
   .action((opts: { output: string; staleDays: string; dataDir: string }) => {
     const store = loadStore(opts.dataDir);
-    const html = renderHtmlReport(store, Number(opts.staleDays));
+    const staleWindowDays = Number(opts.staleDays);
+    if (Number.isNaN(staleWindowDays)) {
+      console.error(`Invalid --stale-days value "${opts.staleDays}": expected a number.`);
+      process.exitCode = 1;
+      return;
+    }
+    const html = renderHtmlReport(store, staleWindowDays);
     writeFileSync(opts.output, html, "utf-8");
     console.log(`Wrote report to ${opts.output}`);
   });
